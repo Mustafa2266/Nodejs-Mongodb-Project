@@ -1,0 +1,23 @@
+:root{
+  --bg:#f7f7fb;
+  --card:#ffffff;
+  --accent:#2b6cb0;
+  --muted:#666;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
+header{background:var(--accent);color:#fff;padding:1rem}
+header h1{margin:0;font-size:1.25rem}
+main{max-width:900px;margin:1.25rem auto;padding:0 1rem}
+section{background:var(--card);padding:1rem;border-radius:8px;margin-bottom:1rem;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+form{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:end}
+label{display:flex;flex-direction:column;flex:1;min-width:160px}
+input{padding:0.5rem;border:1px solid #ddd;border-radius:6px}
+button{background:var(--accent);color:#fff;border:none;padding:0.5rem 0.75rem;border-radius:6px;cursor:pointer}
+.user-row{display:flex;justify-content:space-between;align-items:center;padding:0.5rem;border-bottom:1px solid #f0f0f5}
+.user-info{display:flex;flex-direction:column}
+.user-name{font-weight:600}
+.user-email{color:var(--muted);font-size:0.9rem}
+.user-actions button{margin-left:0.5rem;background:#e2e8f0;color:#111;padding:0.35rem 0.5rem}
+#toast{position:fixed;right:1rem;bottom:1rem;background:#111;color:#fff;padding:0.5rem 0.75rem;border-radius:6px}
+.hidden{display:none}
