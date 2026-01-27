@@ -17,5 +17,5 @@ jobs:
     - name: Build the Docker image
       run: |
         pwd
-        cd ./nodejs-newApp/
+        cd nodejs-App/
         docker build . --file Dockerfile --tag my-image-nodejs:$(date +%s)
