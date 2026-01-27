@@ -60,5 +60,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Build and Push Image
         run: |
+          cd nodejs-App/
           docker build -t ${{ vars.DOCKERHUB_USERNAME }}/nodejs-deployment-with-mongodb:${{ github.sha }} .
           docker push ${{ vars.DOCKERHUB_USERNAME }}/nodejs-deployment-with-mongodb:${{ github.sha }} 
