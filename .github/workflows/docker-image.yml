@@ -33,22 +33,32 @@ jobs:
     #       mustafa2266/nodejs-mongodb:latest
     #       mustafa2266/nodejs-mongodb:${{ github.sha }}
   
-    - name: Login to Docker Hub
-      uses: docker/login-action@v3
-      with:
-        username: ${{ vars.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-    -
-      name: Set up QEMU
-      uses: docker/setup-qemu-action@v3
-    -
-      name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-    -
-      name: Build and push
-      uses: docker/build-push-action@v6
-      with:
-        push: true
-        tags: mustafa226/nodejs-deployment-with-mongodb:${{ github.sha }}
+    # - name: Login to Docker Hub
+    #   uses: docker/login-action@v3
+    #   with:
+    #     username: ${{ vars.DOCKERHUB_USERNAME }}
+    #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+    # -
+    #   name: Set up QEMU
+    #   uses: docker/setup-qemu-action@v3
+    # -
+    #   name: Set up Docker Buildx
+    #   uses: docker/setup-buildx-action@v3
+    # -
+    #   name: Build and push
+    #   uses: docker/build-push-action@v6
+    #   with:
+    #     push: true
+    #     tags: mustafa226/nodejs-deployment-with-mongodb:${{ github.sha }}
         
-
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build and Push Image
+        run: |
+          docker build -t ${{ vars.DOCKERHUB_USERNAME }}/nodejs-deployment-with-mongodb:${{ github.sha }} .
+          docker push ${{ vars.DOCKERHUB_USERNAME }}/nodejs-deployment-with-mongodb:${{ github.sha }} 
