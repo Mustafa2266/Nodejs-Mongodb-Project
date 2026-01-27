@@ -49,4 +49,6 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: mustafa2266/nodejs-app:${{ github.sha }}
+        tags: mustafa226/nodejs-deployment-with-mongodb:${{ github.sha }}
+        
+
