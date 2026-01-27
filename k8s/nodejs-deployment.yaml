@@ -15,7 +15,7 @@ spec:
       containers:
         - name: nodejs-app
           # Replace this image with your built image (push to registry or load into kind)
-          image: nodejs-v1:latest #other  image :nodejs-newapp-web:latest
+          image: nodejs-v1:latest #other  image :nodejs-newapp-web:latest -- make sure to name the image with that while building
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000

@@ -1,1 +1,1 @@
-# Nodejs-Mongodb-FullProject
+A minimal yet full-featured backend API built with Node.js and MongoDB, designed to demonstrate how to connect a REST API to a NoSQL database and deploy it using Docker, Docker Compose, and Kubernetes.

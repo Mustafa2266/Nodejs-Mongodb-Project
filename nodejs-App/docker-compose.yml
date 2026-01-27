@@ -10,12 +10,18 @@ services:
       - mongodb_data:/data/db
 
   web:
+    # This means the Node.js app is built locally, not pulled from Docker Hub.
     build:
       context: .
       dockerfile: Dockerfile
     container_name: nodejs_app
     ports:
       - "5000:5000"
+    # Environment variables
+    # Set the MongoDB connection URI
+
+    # mongodb (it's protocol to use mongodb like http)://<host>:<port>/<database> host here is the service name 'mongodb' and it creates db named 'nodejs_app' if not exists
+    #Sets an environment variable inside the container:
     environment:
       - MONGO_URI=mongodb://mongodb:27017/nodejs_app
     depends_on:
