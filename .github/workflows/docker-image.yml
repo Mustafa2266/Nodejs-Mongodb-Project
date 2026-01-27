@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-nodejs:$(date +%s)
+      run: |
+        cd nodejs-newApp/
+        docker build . --file Dockerfile --tag my-image-nodejs:$(date +%s)
